@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaskFlow - To Do List</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    <header class="header">
+         <div>
+            <p class="welcome">WELCOME BACK 👋</p>
+            <h1>My Tasks</h1>
+            <p class="subtitle">Stay organized. Get things done.</p>
+        </div>
+            <button id="themeBtn" class="theme-btn" type="button">
+            🌙
+             </button>
+    </header>
+    <section class="stats">
+
+        <div class="stat-card">
+            <span class="stat-icon">📋</span>
+            <div>
+                <p>Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">⏳</span>
+            <div>
+                <p>Pending</p>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">✅</span>
+            <div>
+                <p>Completed</p>
+                <h2 id="completedTasks">0</h2>
+            </div>
+        </div>
+
+    </section>
+    <section class="progress-section">
+
+        <div class="progress-header">
+            <span>Today's Progress</span>
+            <strong id="progressText">0%</strong>
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+    </section>
+    <section class="add-task-card">
+
+        <h2>➕ Add New Task</h2>
+
+        <form id="taskForm">
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Add Task
+                </button>
+
+            </div>
+
+
+            <div class="task-options">
+
+                <div>
+                    <label for="priority">Priority</label>
+
+                    <select id="priority">
+                        <option value="low">🟢 Low</option>
+                        <option value="medium" selected>🟡 Medium</option>
+                        <option value="high">🔴 High</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="category">Category</label>
+
+                    <select id="category">
+                        <option value="personal">👤 Personal</option>
+                        <option value="work">💼 Work</option>
+                        <option value="study">📚 Study</option>
+                        <option value="shopping">🛒 Shopping</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="dueDate">Due Date</label>
+
+                    <input type="date" id="dueDate">
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </section>
+    <section class="task-controls">
+
+        <div class="filters">
+
+            <button class="filter active" data-filter="all" type="button">
+                All
+            </button>
+
+            <button class="filter" data-filter="pending" type="button">
+                Pending
+            </button>
+
+            <button class="filter" data-filter="completed" type="button">
+                Completed
+            </button>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search tasks..."
+            >
+
+        </div>
+
+    </section>
+    <main>
+
+        <div id="taskList" class="task-list"></div>
+
+        <div id="emptyState" class="empty-state">
+
+            <div>📝</div>
+
+            <h3>No tasks yet</h3>
+
+            <p>Add your first task and start being productive!</p>
+
+        </div>
+
+    </main>                     
+    <footer>
+
+        <button id="clearCompleted" type="button">
+            🗑 Clear Completed
+        </button>
+
+        <span>Made with ❤️ for productivity</span>
+
+    </footer>
+
+</div>
+
+
+<script src="script.js"></script>
+            
+
+</body>
+</html>
